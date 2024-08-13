@@ -27,6 +27,7 @@ class CustomerControllerTest {
 
     CustomerServiceImpl customerServiceImpl = new CustomerServiceImpl();
 
+
     @Test
     void listAllCustomers() throws Exception {
         given(customerService.getAllCustomers()).willReturn(customerServiceImpl.getAllCustomers());
