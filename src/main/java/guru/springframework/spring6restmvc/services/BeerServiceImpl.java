@@ -67,21 +67,11 @@ public class BeerServiceImpl implements BeerService {
     }
 
     @Override
-    public Beer getBeerById(UUID id) {
+    public Optional<Beer> getBeerById(UUID id) {
 
         log.debug("getBeerById - Service - Id :"+id.toString());
 
-        return Beer.builder()
-                .id(id)
-                .version(1)
-                .beerName("Galaxy Cat")
-                .beerStyle(BeerStyle.PALE_ALE)
-                .upc("12356")
-                .price(new BigDecimal("12.99"))
-                .quantityOnHand(122)
-                .createdDate(LocalDateTime.now())
-                .updateDate(LocalDateTime.now())
-                .build();
+        return Optional.of(beerMap.get(id));
     }
 
     @Override
