@@ -28,6 +28,7 @@ public class Beer {
     @Column(length = 36, columnDefinition = "varchar(36)", updatable = false, nullable = false)
     private UUID id;
 
+
     @Version
     private Integer version;
 
