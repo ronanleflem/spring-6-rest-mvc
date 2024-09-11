@@ -31,6 +31,7 @@ public class Beer {
     @Version
     private Integer version;
 
+
     @NotNull
     @NotBlank
     @Size(max = 50)
