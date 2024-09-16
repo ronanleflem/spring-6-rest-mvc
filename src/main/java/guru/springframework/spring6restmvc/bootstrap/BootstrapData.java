@@ -43,11 +43,10 @@ public class BootstrapData implements CommandLineRunner {
     }
 
     private void loadCsvData() throws FileNotFoundException {
-        if(beerRepository.count() < 10){
+        if (beerRepository.count() < 10){
             File file = ResourceUtils.getFile("classpath:csvdata/beers.csv");
 
             List<BeerCSVRecord> recs = beerCsvService.convertCSV(file);
-
 
             recs.forEach(beerCSVRecord -> {
                 BeerStyle beerStyle = switch (beerCSVRecord.getStyle()) {
