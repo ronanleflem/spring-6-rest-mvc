@@ -6,8 +6,10 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.annotations.UpdateTimestamp;
 import org.hibernate.type.SqlTypes;
 
 import java.math.BigDecimal;
@@ -50,6 +52,14 @@ public class Beer {
 
     @NotNull
     private BigDecimal price;
+
+    // Indique que ce champ sera automatiquement rempli avec la date et l'heure actuelles
+    // lors de la création (insertion) de l'entité dans la base de données
+    @CreationTimestamp
     private LocalDateTime createdDate;
+
+    // Indique que ce champ sera automatiquement mis à jour avec la date et l'heure actuelles
+    // chaque fois que l'entité sera mise à jour dans la base de données
+    @UpdateTimestamp
     private LocalDateTime updateDate;
 }
