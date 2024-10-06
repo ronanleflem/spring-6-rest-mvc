@@ -84,7 +84,6 @@ public class BeerServiceJPA implements BeerService {
         }, () -> {
             atomicReference.set(Optional.empty());
         });
-
         return atomicReference.get();
     }
 
